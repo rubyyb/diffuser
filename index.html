@@ -660,6 +660,43 @@
                     </div><!-- item02 end -->
                 </div><!-- inner end -->
 
+                <div class="swiper mySwiper_mobile">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="item on">
+                                <figure>
+                                    <img src="img/06_1.jpg" alt="디퓨저 사진">
+                                </figure>
+                            </div><!-- item01 -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <figure>
+                                    <img src="img/06_2.jpg" alt="디퓨저 사진">
+                                </figure>
+                            </div><!-- item01 -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <figure>
+                                    <img src="img/06_3.jpg" alt="디퓨저 사진">
+                                </figure>
+                            </div><!-- item01 -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <figure>
+                                    <img src="img/06_4.jpg" alt="디퓨저 사진">
+                                </figure>
+                            </div><!-- item01 -->
+                        </div><!-- swiper-slide -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+
                 <div class="slide_bar">
                     <p class="on">1</p>
                     <p>2</p>
@@ -888,6 +925,12 @@
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
+            },
+        });
+
+        var swiper = new Swiper(".mySwiper_mobile", {
+            pagination: {
+                el: ".swiper-pagination",
             },
         });
       </script>
