@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F5NATURE</title>
+    <link rel="stylesheet" href="css/F5NATURE.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="lib/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(function(){
+            //header 1차메뉴
+            let mobileMenu = $('.mobile_gnb .mobile_btn .mobile_menu');
+            let mobileClose = $('.mobile_gnb .close_btn');
+            let nav = $('.mobile_gnb .gnb');
+
+            mobileMenu.mouseenter(function(){
+                //alert();
+                nav.animate({
+                    'right' : '0'
+                }, 1000);//nav.animate
+            })
+            mobileClose.mouseenter(function(){
+                nav.animate({
+                    'right' : '-100%'
+                }, 1000);//nav.animate
+            })//1차메뉴
+
+            //2차메뉴
+            $('.mobile_gnb .gnb .depth01 > a').mouseenter(function(){
+                if($(this).next().css('display') === 'none') {
+                    //alert();
+                    $('.mobile_gnb .depth02').slideUp();
+                    $(this).next().slideDown();
+                }
+            })//2차메뉴
+
+            //cont02
+            let cont02 = $('.cont02 .item');
+            let openBtn = $('.cont02 .item_img .open_btn');
+            let hoverBtn = $('.cont02 .item_img .h_btn');
+
+            cont02.mouseenter(function(){
+                cont02.removeClass('on');
+                $(this).addClass('on');  
+            })// cont02.mouseenter end
+
+
+            //cont03
+            let cont03 = document.querySelector('.cont03_menu .tab');
+            let menu = cont03.querySelectorAll('.tab_menu li');
+            let list = cont03.querySelectorAll('.cont03_menu .tab .list');
+
+            for(let i = 0; i < menu.length; i++) {
+                menu[i].addEventListener('mouseenter', () => {
+                    //alert();
+
+                    menu.forEach((menu) => {
+                        menu.classList.remove('on')
+                    })
+                    list.forEach((list) => {
+                        list.classList.remove('on');
+                    })
+
+                    menu[i].classList.add('on');
+                    list[i].classList.add('on'); 
+                })
+            }//cont03
+
+            //cont04
+            let bigImage = document.querySelector('.cont04 .big_item img');
+            let bigTitle = document.querySelector('.cont04 .big_item h5');
+            let bigText = document.querySelector('.cont04 .big_item p');
+            let item = document.querySelector('.cont04 .small_item');
+            let smallItem = item.querySelectorAll('.item');
+            let smallImage = item.querySelectorAll('img');
+            let smallTitle = item.querySelectorAll('h5');
+            let smallText = item.querySelectorAll('p');
+
+            for(let i = 0; i < smallItem.length; i++) {
+                smallItem[i].addEventListener('mouseenter', () => {
+                    console.log(i)
+                    bigImage.src = smallImage[i].src;
+                    bigTitle.innerHTML = smallTitle[i].innerHTML;
+                    bigText.innerHTML = smallText[i].innerHTML;
+
+                    smallImage.forEach((itemStyle) => {
+                        itemStyle.style.opacity ='0.3';
+                    })
+                    smallImage[i].style.opacity ='1';
+                })
+            }//cont04
+
+            //cotn05
+            let cont05 = document.querySelector('.cont05');
+            let cont05Item = cont05.querySelectorAll('.inner .list .item');
+            let slideBar = cont05.querySelector('.slide_bar p');
+
+            for(let i = 0; i < slideBar.length; i++) {
+                slideBar[i].addEventListener('mouseenter', () => {
+                    alert();
+                })
+            }
+
+
+
+        });//script end
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header class="header" id="header">
+            <div class="inner">
+                <h1>
+                    <figure>
+                        <img src="img/pc_logo.png" alt="F5nature">
+                    </figure>
+                </h1>
+                <nav class="pc_gnb">
+                    <ul class="gnb">
+                        <li class="depth01">
+                            <a href="#">Candel</a>
+                            <ul class="depth02">
+                                <li><a href="#">차량용</a></li>
+                                <li><a href="#">캔들워머</a></li>
+                                <li><a href="#">소이캔들</a></li>
+                                <li><a href="#">아로마캔들</a></li>
+                                <li><a href="#">향초캔들</a></li>
+                            </ul><!-- depth02 end -->
+                        </li><!-- depth01 end -->
+
+                        <li class="depth01">
+                            <a href="#">Diffuser</a>
+                            <ul class="depth02">
+                                <li><a href="#">가정용</a></li>
+                                <li><a href="#">차량용</a></li>
+                                <li><a href="#">대용량</a></li>
+                            </ul><!-- depth02 end -->
+                        </li><!-- depth01 end -->
+
+                        <li class="depth01">
+                            <a href="#">Props</a>
+                            <ul class="depth02">
+                                <li><a href="#">받침대</a></li>
+                                <li><a href="#">캔들 소품</a></li>
+                            </ul><!-- depth02 end -->
+                        </li><!-- depth01 end -->
+
+                        <li class="depth01">
+                            <a href="#">Gift</a>
+                        </li><!-- depth01 end -->
+                    </ul><!-- gnb end -->
+
+                    <button class="pc_btn">
+                        <figure>
+                            <img src="img/24.02.05_수업_검색아이콘_검.png" alt="검색">
+                        </figure>
+                        <figure>
+                            <img src="img/사람.png" alt="마이페이지">
+                        </figure>
+                        <figure>
+                            <img src="img/장바구니.png" alt="장바구니">
+                        </figure>
+                    </button><!-- pc_btn end -->
+                </nav><!-- pc_gnb end -->
+
+                <nav class="mobile mobile_gnb">
+                    <button class="mobile mobile_btn">
+                        <img src="img/24.02.05_수업_검색아이콘_검.png" alt="검색">
+                        <img class="mobile_menu" src="img/24.01.11_ 수업_매뉴선.png" alt="메뉴더보기">
+                    </button><!-- mobile_btn end -->
+
+                    <ul class="gnb">
+                        <button class="close_btn">
+                            <img src="img/24.02.19-수업-메뉴닫기.png" alt="메뉴닫기">
+                        </button><!-- close_btn -->
+
+                        <li class="depth01">
+                            <a href="#">Candel</a>
+                            <ul class="depth02">
+                                <li><a href="#">차량용</a></li>
+                                <li><a href="#">캔들워머</a></li>
+                                <li><a href="#">소이캔들</a></li>
+                                <li><a href="#">아로마캔들</a></li>
+                                <li><a href="#">향초캔들</a></li>
+                            </ul><!-- depth02 end -->
+                        </li><!-- depth01 end -->
+
+                        <li class="depth01">
+                            <a href="#">Diffuser</a>
+                            <ul class="depth02">
+                                <li><a href="#">가정용</a></li>
+                                <li><a href="#">차량용</a></li>
+                                <li><a href="#">대용량</a></li>
+                            </ul><!-- depth02 end -->
+                        </li><!-- depth01 end -->
+
+                        <li class="depth01">
+                            <a href="#">Props</a>
+                            <ul class="depth02">
+                                <li><a href="#">받침대</a></li>
+                                <li><a href="#">캔들 소품</a></li>
+                            </ul><!-- depth02 end -->
+                        </li><!-- depth01 end -->
+
+                        <li class="depth01">
+                            <a href="#">Gift</a>
+                        </li><!-- depth01 end -->
+                    </ul><!-- gnb end -->
+                </nav><!-- mobile_gnb end -->
+            </div><!-- inner end -->
+        </header><!-- header end -->
+
+        <main id="main">
+            <section class="main_visual">
+                <figure>
+                    <img src="img/01_디퓨져_메인비주얼.jpg" alt="디퓨터 메인비주얼">
+                </figure>
+            </section><!-- main_visual end -->
+
+            <section class="cont01">
+                <div class="cont01_header">
+                    <figure>
+                        <img src="img/mobile_logo.png" alt="F5NATURE">
+                    </figure>
+                </div><!-- cont01_header end -->
+                
+                <div class="list">
+                    <div class="item">
+                        <figure>
+                            <img src="img/02section01_1.jpg" alt="캔들 더보기">
+                        </figure>
+                        <div>
+                            <p>Candle</p>
+                        </div>
+                    </div><!-- item end -->
+
+                    <div class="item">
+                        <figure>
+                            <img src="img/02section01_2.jpg" alt="디퓨져 더보기">
+                        </figure>
+                        <div>
+                            <p>Diffuser</p>
+                        </div>
+                    </div><!-- item end -->
+
+                    <div class="item">
+                        <figure>
+                            <img src="img/02section01_3.jpg" alt="소품 더보기">
+                        </figure>
+                        <div>
+                            <p>Prop</p>
+                        </div>
+                    </div><!-- item end -->
+                </div><!-- list end -->
+            </section><!-- cont01 end -->
+
+            <section class="cont02">
+                <div class="title">
+                    <h3>New</h3>
+                    <h3 class="title1">Product</h3>
+                    <p>에프오네이터에서 더 좋은 제품으로 찾아온 신상품을 만나보세요.</p>
+                </div><!-- title end -->
+
+                <div class="list">
+                    <div class="item">
+                        <a href="#">
+                            <div class="item_img">
+                                <figure>
+                                    <img src="img/03new_01.jpg" alt="디퓨저">
+                                </figure>
+                                <div>
+                                    <p>웨딩캔들 신랑신부 선물세트</p>
+                                    <strong>19,800원</strong>
+                                </div>
+                            </div><!-- item_img -->
+                            <button class="open_btn">
+                                <img src="img/이미지_더보기_흰.png" alt="더보기">
+                            </button>
+
+                            <button class="h_btn">
+                                <img src="img//이미지_저장아니콘.png" alt="더보기">
+                                <img src="img/이미지_장바구니아이콘.png" alt="더보기">
+                                <img src="img/이미지_더보기_검.png" alt="더보기">
+                            </button>
+                        </a>
+                    </div><!-- item end -->
+
+                    <div class="item">
+                        <a href="#">
+                            <div class="item_img">
+                                <figure>
+                                    <img src="img/03new_02.jpg" alt="디퓨저">
+                                </figure>
+                                <div>
+                                    <p>디퓨저 룸스프레이 선물세트</p>
+                                    <strong>44,800원</strong>
+                                </div>
+                            </div><!-- item_img -->
+                            <button class="open_btn">
+                                <img src="img/이미지_더보기_흰.png" alt="더보기">
+                            </button>
+
+                            <button class="h_btn">
+                                <img src="img//이미지_저장아니콘.png" alt="더보기">
+                                <img src="img/이미지_장바구니아이콘.png" alt="더보기">
+                                <img src="img/이미지_더보기_검.png" alt="더보기">
+                            </button>
+                        </a>
+                    </div><!-- item end -->
+
+                    <div class="item">
+                        <a href="#">
+                            <div class="item_img">
+                                <figure>
+                                    <img src="img/03new_03.jpg" alt="디퓨저">
+                                </figure>
+                                <div>
+                                    <p>룸스프레이 방향제 탈취제</p>
+                                    <strong>21,800원</strong>
+                                </div>
+                            </div><!-- item_img -->
+                            <button class="open_btn">
+                                <img src="img/이미지_더보기_흰.png" alt="더보기">
+                            </button>
+
+                            <button class="h_btn">
+                                <img src="img//이미지_저장아니콘.png" alt="더보기">
+                                <img src="img/이미지_장바구니아이콘.png" alt="더보기">
+                                <img src="img/이미지_더보기_검.png" alt="더보기">
+                            </button>
+                        </a>
+                    </div><!-- item end -->
+
+                    <div class="item">
+                        <a href="#">
+                            <div class="item_img">
+                                <figure>
+                                    <img src="img/03new_04.jpg" alt="디퓨저">
+                                </figure>
+                                <div>
+                                    <p>하트봉봉캔들 오브제캔들</p>
+                                    <strong>11,800원</strong>
+                                </div>
+                            </div><!-- item_img -->
+                            <button class="open_btn">
+                                <img src="img/이미지_더보기_흰.png" alt="더보기">
+                            </button>
+
+                            <button class="h_btn">
+                                <img src="img//이미지_저장아니콘.png" alt="더보기">
+                                <img src="img/이미지_장바구니아이콘.png" alt="더보기">
+                                <img src="img/이미지_더보기_검.png" alt="더보기">
+                            </button>
+                        </a>
+                    </div><!-- item end -->
+                </div><!-- list end -->
+            </section><!-- cont02 end -->
+
+            <section class="cont02_img">
+                <div class="title_img">
+                    <figure>
+                        <img src="img/04section03_배경.jpg" alt="배경">
+                    </figure>
+                </div><!--  title_img -->
+            </section><!-- cont02_img -->
+
+            <section class="cont03">
+                <div class="cont03_menu">
+                    <div class="title">
+                        <h3>F5NATURE</h3>
+                        <p>평범한 일상에 감성을 더하다.</p>
+                    </div><!-- title end -->
+
+                    <div class="tab">
+                        <div class="tab_menu">
+                            <ul>
+                                <li class="on">Candle</li>
+                                <li>Diffuser</li>
+                                <li>Prop</li>
+                            </ul>
+                            <button>
+                                <img src="img/더보기.png" alt="">
+                            </button>
+                        </div><!-- tab_menu -->
+
+                        <div class="list on">
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/04candle_1.jpg" alt="캔들">
+                                    </figure>
+                                    <div>
+                                        <p>오브제캔들 모음전</p>
+                                        <strong>9,800원</strong>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/04candle_2.jpg" alt="캔들">
+                                    </figure>
+                                    <div>
+                                        <p>버블피라미드캔들</p>
+                                        <strong>26,800원</strong>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/04candle_3.jpg" alt="캔들">
+                                    </figure>
+                                    <div>
+                                        <p>케이크캔들</p>
+                                        <strong>17,800원</strong>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/04candle_3.jpg" alt="캔들">
+                                    </figure>
+                                    <div>
+                                        <p>케이크캔들</p>
+                                        <strong>17,800원</strong>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+                        </div><!-- list end -->
+                        
+                        <div class="list">
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/04diffuser_1.jpg" alt="캔들">
+                                    </figure>
+                                    <div>
+                                        <p>사각디퓨저 100ml</p>
+                                        <strong>25,800원</strong>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/04diffuser_2.jpg" alt="캔들">
+                                    </figure>
+                                    <div>
+                                        <p>디퓨저 룸스프레이</p>
+                                        <strong>44,800원</strong>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/04diffuser_3.jpg" alt="캔들">
+                                    </figure>
+                                    <div>
+                                        <p>룸스프레이 방향제</p>
+                                        <strong>21,800원</strong>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/04diffuser_3.jpg" alt="캔들">
+                                    </figure>
+                                    <div>
+                                        <p>룸스프레이 방향제</p>
+                                        <strong>21,800원</strong>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+                        </div><!-- list end -->
+
+                        <div class="list">
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/04drop_1.jpg" alt="캔들">
+                                    </figure>
+                                    <div>
+                                        <p>시나몬스틱</p>
+                                        <strong>4,000원</strong>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/04drop_2.jpg" alt="캔들">
+                                    </figure>
+                                    <div>
+                                        <p>캔들소품 차디찬글라스</p>
+                                        <strong>8,000원</strong>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/04drop_3.jpg" alt="캔들">
+                                    </figure>
+                                    <div>
+                                        <p>받침대 트레이 선물포장</p>
+                                        <strong>4,500원</strong>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/04drop_3.jpg" alt="캔들">
+                                    </figure>
+                                    <div>
+                                        <p>받침대 트레이 선물포장</p>
+                                        <strong>4,500원</strong>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+                        </div><!-- list end -->
+                    </div><!-- tab end -->
+                    
+                    <div class="text">
+                        <a href="#">
+                            <p>더보기</p>
+                        </a>
+                    </div>
+                </div><!-- menu end -->
+            </section><!-- cont03 end -->
+
+            <section class="cont04">
+                <div class="inner">
+                    <div class="title">
+                        <h3>Weekly Best</h3>
+                        <p>한주간 인기 아이템을 확인하세요</p>
+                    </div><!-- title -->
+
+                    <div class="list">
+                        <div class="big_item">
+                            <figure>
+                                <img src="img/05best_1.jpg" alt="베스트 상품">
+                            </figure>
+                            <div>
+                                <h5>사각디퓨저</h5>
+                                <p>25,800원</p>
+                            </div>
+                        </div><!-- big_item -->
+
+                        <div class="small_item">
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/05best_1.jpg" alt="베스트 상품">
+                                    </figure>
+                                    <div>
+                                        <h5>사각디퓨저</h5>
+                                        <p>25,800원</p>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/05best_2.jpg" alt="베스트 상품">
+                                    </figure>
+                                    <div>
+                                        <h5>아가봉봉캔들</h5>
+                                        <p>3,500원</p>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/05best_3.jpg" alt="베스트 상품">
+                                    </figure>
+                                    <div>
+                                        <h5>치즈캔들</h5>
+                                        <p>9,800원</p>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/05best_4.jpg" alt="베스트 상품">
+                                    </figure>
+                                    <div>
+                                        <h5>화이트 베이직 디퓨저</h5>
+                                        <p>19,800원</p>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/05best_5.jpg" alt="베스트 상품">
+                                    </figure>
+                                    <div>
+                                        <h5>아가봉봉캔들</h5>
+                                        <p>3,500원</p>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+
+                            <div class="item">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/05best_6.jpg" alt="베스트 상품">
+                                    </figure>
+                                    <div>
+                                        <h5>디퓨저 리필액</h5>
+                                        <p>12,800원</p>
+                                    </div>
+                                </a>
+                            </div><!-- item end -->
+                        </div><!-- small_item -->
+                    </div><!-- list end -->
+                </div>
+            </section><!-- cont04 end -->
+
+            <section class="cont05">
+                <div class="inner">
+                    <div class="list">
+                        <div class="item01 item on">
+                            <figure>
+                                <img src="img/06_1.jpg" alt="디퓨저 사진">
+                            </figure>
+                        </div>
+                        <div class="item02 item cont05_next">
+                            <figure>
+                                <img src="img/06_3.jpg" alt="디퓨저 사진">
+                            </figure>
+                        </div>
+                    </div><!-- item01 end -->
+                    <div class="list02 list">
+                        <div class="item03 item cont05_next">
+                            <figure>
+                                <img src="img/06_2.jpg" alt="디퓨저 사진">
+                            </figure>
+                        </div>
+                        <div class="item04 item cont05_next">
+                            <figure>
+                                <img src="img/06_4.jpg" alt="디퓨저 사진">
+                            </figure>
+                        </div>
+                    </div><!-- item02 end -->
+                </div><!-- inner end -->
+
+                <div class="slide_bar">
+                    <p class="on">1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>4</p>
+                </div><!-- slide_bar -->
+            </section><!-- cont05 end -->
+
+            <section class="cont06">
+                <div class="inner">
+                    <div class="title">
+                        <h3>MD PICK</h3>
+                        <p>다른 고개들은 이 상품을 보고 있어요.</p>
+                    </div><!-- title -->
+
+                    <div class="list">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_1.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>딸기캔들</h5>
+                                                <p>10,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_2.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>구름/블럭캔들</h5>
+                                                <p>11,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_3.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>하트/별캔들</h5>
+                                                <p>6,000원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_4.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>레몬/라임캔들</h5>
+                                                <p>8,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_5.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>(세트상품)진주알미니캔들</h5>
+                                                <p>11,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_6.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>디퓨저 리필액</h5>
+                                                <p>12,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_7.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>천연 레진스톤 방향제</h5>
+                                                <p>27,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_8.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>디퓨터 룸스프레이</h5>
+                                                <p>44,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_9.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>케이크캔들</h5>
+                                                <p>17,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_10.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>크리스마스캔들모음</h5>
+                                                <p>9,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                            </div><!-- swiper-wrapper end -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div><!-- list end -->
+                </div><!-- inner end -->
+            </section><!-- cont06 end -->
+        </main><!-- #main end -->
+
+        <footer id="footer">
+            <div class="inner">
+                <div class="footer01">
+                    <strong>상담문의</strong>
+                    <p><span>010-8690-4049</span></p>
+                </div><!-- foonter01 end -->
+
+                <div class="footer02">
+                    <div class="left">
+                        <strong>고객센터</strong>
+                        <p>평일 : 10:00 - 18:00 (점심시간 12:00 - 13:00)</p>
+                        <p>고객센터 운영시간에 순차적으로 답변드리겠습니다.</p>
+                        <p>토요일, 일요일, 공휴일 휴무</p>
+                        <p>부재시 문자 남겨주시면 확인 후 연락드리겠습니다.</p>
+                    </div><!-- left end -->
+
+                    <div class="center">
+                        <strong>계좌번호</strong>
+                        <p>예금주 :김정식[비엔컨퍼니]</p>
+                        <p>국민은행 774302-01-530028</p>
+                        <p>하나은행 703-910411-61107</p>
+                        <p>기업은행 190-116116-01-017</p>
+                    </div><!-- center end -->
+
+                    <div class="right">
+                        <strong>반품배송지</strong>
+                        <p>광주광역시 북구 참판로 184 2층 F%NATURE</p>
+                        <div class="right_box">
+                            <div class="text">
+                                <figure>
+                                    <img src="img/FOOTER.png" alt="반품배송지 안내 버스">
+                                </figure>
+                                <strong>배송조회</strong>
+                            </div><!-- text end -->
+
+                            <div class="box">
+                                <strong>운송장 번호</strong>
+                            </div><!-- box end -->
+                        </div>
+                    </div><!-- right enbd -->
+                </div><!-- footer02 end -->
+
+                <div class="footer03">
+                    <div>
+                        <p>법인명(상호):비엔컴퍼니</p>
+                        <p>대표자(성명):김정식</p>
+                        <p>사업자 등록번호 안내:397-21-00840</p>
+                    </div>
+                    <div>
+                        <p>통신판매어 신고:제 2018-광주북구-0873호[사업자정보확인]</p>
+                        <p>개인정보보호책임자:김정식(bncompany2018@naver.com)</p>
+                    </div>
+                    <div>
+                        <p>전화:010-8690-4049</p>
+                        <p>주소:61155 광주광역시 북구 참판로 184(두암동)2층 F5NATURE</p>
+                    </div>
+                    <p>Copyright © F5NATURE. All right re</p>
+                </div><!-- footer03 end -->
+            </div><!-- inner end -->
+        </footer><!-- footer end -->
+    </div><!-- #wrap end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 5.5,
+            spaceBetween: 36,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+      </script>
+</body>
+</html>

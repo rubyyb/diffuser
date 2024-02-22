@@ -1,0 +1,992 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* 타이틀 제외 모든 글 */
+}
+@font-face {
+    /* 타이틀 글 */
+    font-family: 'InkLipquid';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+    font-family: 'InkLipquid';
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+#wrap {
+    position: relative;
+}
+body {
+    color: #333;
+    line-height: 1;
+    margin: 0 auto;
+    background-color: #F6F2E9;
+}
+button {
+    background-color: transparent;
+    border: 0;
+}
+h3 {
+    font-family: 'InkLipquid';
+    font-size: 120px;
+    font-weight: normal;
+}
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: #ffffff6b;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.header .inner {
+    max-width: 1440px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .inner h1 figure {
+    height: 66px;
+}
+.header .inner h1 figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.header .inner .pc_gnb {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+}
+.header .inner .pc_gnb .gnb {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.header .inner .pc_gnb .gnb .depth01 {
+    position: relative;
+}
+.header .inner .pc_gnb .gnb .depth01 > a {
+    padding: 0 30px;
+    line-height: 100px;
+    font-size: 18px;
+}
+.header .inner .pc_gnb .gnb .depth01 .depth02 {
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    display: none;
+    z-index: 999;
+    background-color: #F6F2E9;
+}
+.header .inner .pc_gnb .gnb .depth01 .depth02 li {
+    padding: 15px 0;
+    font-size: 18px;
+}
+.header .inner .pc_gnb .gnb .depth01:hover .depth02 {
+    display: block;
+}
+.header .inner .pc_gnb .pc_btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .inner .pc_gnb .pc_btn figure {
+    padding-right: 20px;
+}
+.header .inner .pc_gnb .pc_btn img {
+    width: 20px;
+}
+.mobile {
+    display: none;
+}
+
+/* 🎃🎃🎃main🎃🎃 */
+.main_visual figure {
+    height: 100vh;
+}
+.main_visual figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ⭐⭐⭐cont01⭐⭐⭐ */
+.cont01 {
+    max-width: 1440px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+.cont01 .cont01_header {
+    margin-top: 200px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont01 .cont01_header figure {
+    height: 30px;
+}
+.cont01 .cont01_header figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont01 .list {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 36px;
+}
+.cont01 .list .item figure {
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.cont01 .list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont01 .list .item div {
+    font-size: 25px;
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'GangwonEdu_OTFBoldA';
+}
+
+/* ⭐⭐⭐cont02⭐⭐⭐ */
+.cont02 {
+    max-width: 1440px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+.cont02 .title {
+    margin-top: 200px;
+    position: relative;
+}
+.cont02 .title h3 {
+    margin-left: 50px;
+}
+.cont02 .title .title1 {
+    margin-left: 100px;
+}
+.cont02 .title h3::before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 92px;
+    left: 0;
+    background-color: #333;
+}
+.cont02 .title .title1::before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 218px;
+    left: 0;
+    background-color: #333;
+}
+.cont02 .title p {
+    font-size: 20px;
+    position: absolute;
+    bottom: 72px;
+    right: 50px;
+    font-family: 'InkLipquid';
+}
+.cont02 .list {
+    margin-top: 38px;
+    display: flex;
+    justify-content: space-between;
+    gap: 36px;
+}
+.cont02 .list .item {
+    width: calc(100% / 4);
+    position: relative;
+}
+.cont02 .list .item figure {
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.cont02 .list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont02 .list .item div {
+    margin-top: 25px;
+}
+.cont02 .list .item div p {
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-family: 'GangwonEdu_OTFBoldA';
+}
+.cont02 .list .item div strong {
+    font-size: 25px;
+}   
+.cont02 .list .item .open_btn {
+    position: absolute;
+    bottom: 100px;
+    right: 20px;
+}
+.cont02 .list .item.on .open_btn {
+    display: none;
+}
+.cont02 .list .item .h_btn {
+    display: none;
+}
+.cont02 .list .item.on .h_btn {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    position: absolute;
+    bottom: 100px;
+    right: 20px;
+}
+
+/* ⭐⭐⭐cont02_image⭐⭐⭐ */
+.cont02_img {
+    margin-top: 200px;
+}
+.cont02_img .title_img {
+    margin-bottom: 80px;
+}
+.cont02_img .title_img figure {
+    height: 671px;
+}
+.cont02_img .title_img figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ⭐⭐⭐cont03⭐⭐⭐ */
+.cont03 {
+    max-width: 1440px;
+    width: calc(100 - 40px);
+    margin: 0 auto;
+}
+.cont03 .title {
+    position: relative;
+    margin-top: 80px;
+}
+.cont03 .title h3 {
+    margin-left: 50px;
+    margin-bottom: 38px;
+}
+.cont03 .title p {
+    font-family: 'InkLipquid';
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.cont03 .title::before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    bottom: 27px;
+    left: 0;
+}
+.cont03_menu .tab_menu {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+}
+.cont03_menu .tab_menu ul { 
+    gap: 30px;
+    display: flex;
+    margin-bottom: 54px;
+}
+.cont03_menu .tab_menu ul li {
+    font-size: 25px;
+}
+.cont03_menu .tab_menu ul li.on {
+    text-decoration: underline;
+}
+.cont03_menu .list {
+    display: flex;
+    justify-content: space-between;
+    gap: 36px;
+    display: none;
+}
+.cont03_menu .list.on {
+    display: flex;
+}
+.cont03_menu .list .item figure {
+    width: 455px;
+    height: 455px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.cont03_menu .list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont03_menu .list .item div {
+    margin-top: 25px;
+    font-family: 'GangwonEdu_OTFBoldA';
+    font-size: 25px;
+}
+.cont03_menu .list .item div p {
+    margin-bottom: 10px;
+}
+.cont03_menu .list .item:last-child {
+    display: none;
+}
+.cont03 .text p {
+    margin-top: 30px;
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    background-color: #C0AFA5;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 50px;
+    display: none;
+}
+
+/* ⭐⭐⭐cont04⭐⭐⭐ */
+.cont04 {
+    max-width: 1440px;
+    width: calc(100 - 40px);
+    margin: 0 auto;
+}
+.cont04 .title {
+    margin-top: 200px;
+    margin-bottom: 40px;
+    position: relative;
+}
+.cont04 .title h3 {
+    margin-left: 80px;
+}
+.cont04 .title p {
+    position: absolute;
+    bottom: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    font-family: 'InkLipquid';
+    font-size: 20px;
+}
+.cont04 .title::before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    bottom: 26px;
+    left: 0;
+}
+.cont04 .list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.cont04 .list .big_item {
+    width: 48%;
+    border: 1px solid #333;
+    border-radius: 50% 50% 0 0;
+    overflow: hidden;
+}
+.cont04 .list .big_item figure {
+    height: 600px;
+}
+.cont04 .list .big_item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont04 .list .big_item div {
+    font-size: 25px;
+    font-family: 'GangwonEdu_OTFBoldA';
+    padding: 45px;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+.cont04 .list .big_item div h5 {
+    margin-bottom: 10px;
+}
+.cont04 .list .small_item {
+    width: calc(55% / 2);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-left: 80px;
+}
+.cont04 .list .small_item .item {
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+.cont04 .list .small_item figure {
+    height: 180px;
+}
+.cont04 .list .small_item .item:nth-child(1) figure img {
+    opacity: 1;
+}
+.cont04 .list .small_item .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    overflow: hidden;
+    opacity: 0.5;
+}
+.cont04 .list .small_item .item div {
+    display: none;
+}
+
+/* ⭐⭐⭐cont05⭐⭐⭐ */
+.cont05 {
+    max-width: 1440px;
+    width: calc(100 - 40px);
+    margin: 0 auto;
+    margin-top: 200px;
+}
+.cont05 .inner {
+    display: flex;
+    justify-content: flex-start;
+    gap: 36px;
+}
+.cont05 .list {
+    width: 48%;
+    gap: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cont05 .list .item01 figure {
+    height: 486px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.cont05 .list .item01 figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont05 .list .item02 figure {
+    height: 229px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.cont05 .list .item02 figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont05 .list02 {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cont05 .list02 .item03 figure {
+    height: 338px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.cont05 .list02 .item03 figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont05 .list02 .item04 figure {
+    height: 378px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.cont05 .list02 .item04 figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont05 .slide_bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    display: none;
+}
+.cont05 .slide_bar p {
+    width: 10px;
+    height: 10px;
+    color: transparent;
+    border-radius: 50%;
+    border: 1px solid #333;
+    margin-right: 12px;
+    margin-top: 3px;
+}
+.cont05 .slide_bar figure {
+    width: 17px;
+    height: 12px;
+}
+.cont05 .slide_bar figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* ⭐⭐⭐cont06⭐⭐⭐ */
+.cont06 {
+    max-width: 1920px;
+    width: calc(100 - 40px);
+    margin: 0 auto;
+    margin-top: 200px;
+    overflow: hidden;
+}
+.cont06 .inner .title {
+    max-width: 1440px;
+    width: calc(100 - 40px);
+    margin: 0 auto;
+    position: relative;
+}
+.cont06 .inner .title h3 {
+    margin-left: 80px;
+}
+.cont06 .inner .title p {
+    font-size: 20px;
+    position: absolute;
+    bottom: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    font-family: 'InkLipquid';
+}
+.cont06 .inner .title::before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    bottom: 26px;
+    left: 0;
+}
+.cont06 .inner .swiper-wrapper {
+    display: flex;
+    gap: 35px;
+}
+.cont06 .inner .list .item {
+    width: 17.34vw;
+    position: relative;
+}
+.cont06 .inner .list .item figure {
+    height: 480px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.cont06 .inner .list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont06 .inner .list .item div {
+    width: 100%;
+    font-family: 'GangwonEdu_OTFBoldA';
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    text-align: center;
+    color: #fff;
+    display: none;
+}
+.cont06 .inner .list .item::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #33333371;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    display: none;
+}
+.cont06 .inner .list .item div h5 {
+    margin-bottom: 15px;
+}
+.cont06 .inner .list .item:hover::before {
+    display: block;
+}
+.cont06 .inner .list .item:hover div {
+    display: block;
+}
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizonta {
+    display: none;
+}
+
+/* ⭐⭐⭐footer⭐⭐⭐ */
+#footer {
+    max-width: 1440px;
+    width: calc(100 - 40px);
+    margin: 200px auto 50px;
+    padding: 100px 145px;
+    border: 1px solid #333;
+}
+.footer01 {
+    font-size: 20px;
+    display: flex;
+    margin-bottom: 20px;
+}
+.footer01 strong {
+    margin-right: 10px;
+}
+.footer02 {
+    display: flex;
+    justify-content: space-between;
+}
+.footer02 strong {
+    display: block;
+    margin-bottom: 5px;
+}
+.footer02 p {
+    margin-bottom: 5px;
+}
+.footer02 .right .right_box {
+    margin-top: 19px;
+}
+.footer02 .right .right_box .text {
+    display: flex;
+    margin-bottom: 12px;
+}
+.footer02 .right .right_box .text strong {
+    display: block;
+    margin-left: 13px;
+}
+.footer02 .right .right_box .box {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    border: 1px solid #333;
+    line-height: 60px;
+    padding: 0 20px;
+}
+.footer03 {
+    margin-top: 50px;
+    padding-top: 50px;
+    border-top: 1px solid #999;
+}
+.footer03 div {
+    display: flex;
+    margin-bottom: 10px;
+}
+.footer03 div p {
+    margin-right: 5px;
+}
+.footer03 > p {
+    margin-top: 40px;
+}
+
+
+@media screen and (max-width:480px) {
+    .header .inner .pc_gnb {display: none;}
+    .mobile {display: block;}
+    h3 {font-size: 50px;}
+    button img {height: 30px;}
+    .header {
+        height: 70px;
+    }
+    .header .inner {
+        line-height: 60px;
+    }
+    .header .inner h1 figure {
+        height: 35px;
+    }
+    .mobile_btn {
+        align-items: center;
+        margin-top: 20px;
+    }
+    .mobile_btn img {
+        margin-left: 16px;
+    }
+    .mobile_btn img:nth-child(1) {
+        margin-left: 0;
+    }
+    .mobile_gnb .gnb {
+        width: 50%;
+        height: 100vh;
+        z-index: 999;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: #F6F2E9;
+        padding: 100px 50px 50px;
+    }
+    .mobile_gnb .gnb .close_btn {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .mobile_gnb .gnb .depth01 {
+        border-bottom: 1px solid #333;
+    }
+    .mobile_gnb .gnb .depth01 > a {
+        display: block;
+        font-size: 25px;
+        margin: 20px 0;
+    }
+    .mobile_gnb .gnb .depth01:last-child {
+        padding: 0;
+    }
+    .mobile_gnb .gnb .depth01 .depth02 {
+        padding-bottom: 20px;
+        display: none;
+    }
+    .mobile_gnb .gnb .depth01 .depth02 li {
+        font-size: 18px;
+        padding: 13px;
+    }
+    .cont01 .list .item div {
+        font-size: 20px;
+    }
+    .cont01 .cont01_header {
+        margin-top: 70px;
+    }
+    .cont01 {
+        width: calc(100% - 20px);
+    }
+    .cont01 .list {
+        gap: 12px;
+    }
+    .cont01 .list .item figure {
+        width: 145px;
+        height: 145px;
+    }
+
+    .cont02 .title {
+        margin-top: 70px;
+    }
+    .cont02 .list {
+        flex-wrap: wrap;
+    }
+    .cont02 .list .item {
+        width: calc(100% / 2 - 20px);
+    }
+    .cont02 .list .item figure {
+        height: 220px;
+    }
+    .cont02 .title h3::before {
+        top: 38px;
+    }
+    .cont02 .title .title1::before {
+        top: 91px;
+    }
+    .cont02 .title p {
+        bottom: 42px;
+    }
+    .cont02 .list .item .open_btn {
+        bottom: 80px;
+        right: 12px;
+    }
+    .cont02 .list .item.on .h_btn {
+        bottom: 80px;
+        right: 12px;
+    }
+    .cont02 .list .item div p {
+        font-size: 16px;
+    }
+    .cont02 .list .item div strong {
+        font-size: 16px;
+    }
+    .cont02 .title h3 {
+        margin-left: 0;
+    }
+    .cont02 .title .title1 {
+        text-align: right;
+    }
+    .cont02 .title p {
+        position: sticky;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .cont02_img {
+        margin-top: 85px;
+    }
+    .cont02_img .title_img figure {
+        height: 300px;
+    }
+
+    .cont03 {
+        width: calc(100% - 40px);
+    }
+    .cont03 .title h3 {
+        margin: 0;
+        text-align: center;
+    }
+    .cont03 .title::before {
+        display: none;
+    }
+    .cont03 .title p {
+        position: sticky;
+        margin: 25px 0;
+        text-align: center;
+    }
+    .cont03 .tab_menu button {
+        display: none;
+    }
+    .cont03_menu .tab_menu {
+        justify-content: center;
+        gap: 42px;
+    }
+    .cont03_menu .tab_menu ul li {
+        font-size: 20px;
+        margin-left: 42px;
+    }
+    .cont03_menu .tab_menu ul li:nth-child(1) {
+        margin-left: 0;
+    }
+    .cont03_menu .list {
+        flex-wrap: wrap;
+    }
+    .cont03_menu .list .item {
+        width: calc(100% / 2 - 20px);
+    }
+    .cont03_menu .list .item:last-child {
+        display: block;
+    }
+    .cont03_menu .list .item figure {
+        width: 194px;
+        height: 194px;
+    }
+    .cont03_menu .list .item figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .cont03_menu .list .item div {
+        font-size: 16px;
+    }
+    .cont03 .text {
+       display: flex;
+       justify-content: center;
+    }
+    .cont03 .text p {
+        display: block;
+    }
+
+    .cont04 {
+        width: calc(100% - 40px);
+    }
+    .cont04 .title {
+        margin-top: 85px;
+        margin-bottom: 0;
+    }
+    .cont04 .title::before {
+        display: none;
+    }
+    .cont04 .title h3 {
+        text-align: center;
+        margin: 0;
+    }
+    .cont04 .title p {
+        position: sticky;
+        margin-top: 20px;
+        margin-bottom: 42px;
+        text-align: center;
+        font-size: 16px;
+    }
+    .cont04 .list {
+        display: block;
+    }
+    .cont04 .list .big_item {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .cont04 .list .big_item figure {
+        height: 400px;
+    }
+    .cont04 .list .big_item div {
+        padding: 15px;
+        font-size: 16px;
+    }
+    .cont04 .list .small_item {
+        width: 100%;
+        margin-left: 0;
+        flex-wrap: nowrap;
+        margin-top: 15px;
+        gap: 8px;
+    }
+    .cont04 .list .small_item figure {
+        height: 60px;
+    }
+
+    .cont05 {
+        margin-top: 85px;
+    }
+    .cont05 .inner {
+        flex-wrap: wrap;
+    }
+    .cont05 .list {
+        width: 100%;
+    }
+    .cont05 .slide_bar {
+        margin-top: -20px;
+        display: block;
+        display: flex;
+    }
+    .cont05 .list .cont05_next {
+        display: none;
+    }
+    .cont05 .list .item02 figure {
+        height: 468px;
+    }
+    .cont05 .list02 {
+        width: 100%;
+    }
+    .cont05 .list02 .item03 figure {
+        height: 468px;
+    }
+    .cont05 .list02 .item04 figure {
+        height: 468px;
+    }
+    .cont05 .list .item figure {
+        height: 250px;
+    }
+
+    .cont06 .inner .title h3 {
+        margin-left: 12px;
+    }
+    .cont06 .inner .title::before {
+        display: none;
+    }
+    .cont06 .inner .title p {
+        position: sticky;
+        margin-left: 12px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .cont06 .inner .list .swiper-slide {
+        display: none;
+    }
+    .cont06 .inner .list .item {
+        width: 25vw;
+    }
+}
