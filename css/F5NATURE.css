@@ -235,14 +235,15 @@ h3 {
 }
 .cont02 .list .item div {
     margin-top: 25px;
+    font-family: 'GangwonEdu_OTFBoldA';
 }
 .cont02 .list .item div p {
     font-size: 25px;
     margin-bottom: 10px;
-    font-family: 'GangwonEdu_OTFBoldA';
 }
 .cont02 .list .item div strong {
     font-size: 25px;
+    font-weight: bolder;
 }   
 .cont02 .list .item .open_btn {
     position: absolute;
@@ -777,6 +778,12 @@ h3 {
     .mobile_gnb .gnb .depth01 .depth02 li {
         font-size: 18px;
         padding: 13px;
+    }
+    .mobile_gnb .gnb .depth01 > a {
+        margin-bottom: 0;
+    }
+    .mobile_gnb .gnb .depth01 .depth02 li {
+        padding: 0;
     }
     .cont01 .list .item div {
         font-size: 20px;
