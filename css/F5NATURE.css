@@ -784,6 +784,9 @@ h3 {
     .cont01 .cont01_header {
         margin-top: 70px;
     }
+    .cont01 .cont01_header figure {
+        width: 119px;
+    }
     .cont01 {
         width: calc(100% - 20px);
     }
