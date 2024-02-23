@@ -369,6 +369,7 @@ h3 {
     border-radius: 25px;
     text-align: center;
     line-height: 50px;
+    font-family: 'GangwonEdu_OTFBoldA';
     display: none;
 }
 
@@ -590,7 +591,7 @@ h3 {
     bottom: 26px;
     left: 0;
 }
-.cont06 .inner .swiper-wrapper {
+.cont06 .inner .list .swiper-wrapper {
     display: flex;
     gap: 35px;
 }
@@ -642,6 +643,8 @@ h3 {
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizonta {
     display: none;
 }
+.mobile_list { display: none;}
+.cont06 .iphone12_item {display: none;}
 
 /* ⭐⭐⭐footer⭐⭐⭐ */
 #footer {
@@ -664,7 +667,7 @@ h3 {
     justify-content: space-between;
 }
 .footer02 strong {
-    display: block;
+    display: inline-block;
     margin-bottom: 5px;
 }
 .footer02 p {
@@ -678,7 +681,7 @@ h3 {
     margin-bottom: 12px;
 }
 .footer02 .right .right_box .text strong {
-    display: block;
+    display: inline-block;
     margin-left: 13px;
 }
 .footer02 .right .right_box .box {
@@ -695,7 +698,6 @@ h3 {
     border-top: 1px solid #999;
 }
 .footer03 div {
-    display: flex;
     margin-bottom: 10px;
 }
 .footer03 div p {
@@ -703,6 +705,16 @@ h3 {
 }
 .footer03 > p {
     margin-top: 40px;
+}
+.mobile_title {
+    display: none;
+}
+/* .mobile_title button {
+    padding-bottom: 10px;
+} */
+.mobile_title button img {
+    width: 10px;
+    height: 5px;
 }
 
 
@@ -999,7 +1011,268 @@ h3 {
     .cont06 .inner .list .swiper-slide {
         display: none;
     }
-    .cont06 .inner .list .item {
-        width: 25vw;
+    .cont06 .mobile_list {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+    .cont06 .mobile_list .big_item {
+        margin-left: 15px;
+        width: 72%;
+        position: relative;
+        border-radius: 25px;
+        overflow: hidden;
+    }
+    .cont06 .mobile_list .big_item figure {
+        height: 394px;
+    }
+    .cont06 .mobile_list .big_item div {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 20px;
+        text-align: center;
+        background-color: #ffffff94;
+        font-family: 'GangwonEdu_OTFBoldA';
+        font-size: 16px;
+    }
+    .cont06 .mobile_list .big_item div h5 {
+        margin-bottom: 5px;
+    }
+    .cont06 .mobile_list .big_item figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .cont06 .mobile_list .small_item {
+        width: 19%;
+        margin-right: 15px;
+    }
+    .cont06 .mobile_list .small_item .swiper-slide:nth-child(1) figure {
+        opacity: 1;
+    }
+    .swiper-vertical  {
+        height: 394px;
+    }
+    .swiper-pagination-vertical.swiper-pagination-bullets, .swiper-vertical>.swiper-pagination-bullets {
+        display: none;
+    }
+    .cont06 .mobile_list .small_item .item figure {
+        height: 91px;
+        border-radius: 25px;
+        overflow: hidden;
+        opacity: 0.5;
+    }
+    .cont06 .mobile_list .small_item .item figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .cont06 .mobile_list .small_item .item div {
+        display: none;
+    }
+
+    #footer {
+        margin: 0;
+        margin-top: 85px;
+        border: 0;
+        border-top: 1px solid #999;
+        padding: 33px 15px 0px;
+        font-size: 14px;
+    }
+    .footer01 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .footer02 {
+        flex-wrap: wrap;
+    }
+    .footer02 .left {
+        width: 100%;
+    }
+    .footer02 p {
+        margin-bottom: 8px;
+    }
+    .mobile_title {
+        margin-top: 15px;
+        display: flex;
+    }
+    .mobile_title p {
+        margin-bottom: 0;
+        margin-right: 6px;
+        font-weight: bolder;
+    }
+    .mobile_footer {
+        display: none;
+    }
+    .footer03 {
+        margin: 0;
+        padding: 0;
+        border-top: 0;
+    }
+    .footer03 .list {
+        background-color: #fff;
+        padding: 15px;
+        display: none;
+    }
+    .footer03 .list.on {
+        display: block;
+    }
+    .footer03 div {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .footer03 div p {
+        display: flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+        margin-bottom: 10px;
+    }
+    .footer03 > p {
+        margin: 15px 0;
+    }
+}/* 480px emd */
+
+@media screen and (max-width:375px) {
+    .main_visual figure {
+        height: 50vh;
+    }
+    .cont01 .list {
+        display: block;
+    }
+    .cont01 .list .item figure {
+        width: 100%;
+    }
+    .cont01 .cont01_header {
+        margin: 40px 0 20px;
+    }
+    .cont01 .list .item div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .cont02 .title {
+        margin-top: 40px;
+    }
+    .cont02 .title p {
+        word-break: keep-all;
+    }
+    .cont02 .list {
+        gap: 20px;
+        justify-content: center;
+    }
+    .cont02 .list .item {
+        position: relative;
+    }
+    .cont02 .list .item figure {
+        height: 180px;
+    }
+    .cont02 .list .item div p {
+        word-break: keep-all;
+    }
+    .cont02 .list .item div {
+        margin-top: 15px;
+    }
+    .cont02 .list .item .open_btn {
+        display: none;
+    }
+    .cont02 .list .item.on .h_btn {
+        display: none;
+    }
+    .cont02 .list .item .h_btn {
+        display: block;
+        position: absolute;
+        bottom: 80px;
+        right: 8px;
+    }
+    .cont02 .list .item .h_btn .icon {
+        display: none;
+    }
+    .cont02_img {
+        margin-top: 40px;
+    }
+    .cont02_img .title_img {
+        margin-bottom: 0;
+    }
+    .cont03 .title {
+        margin-top: 40px;
+    }
+    .cont03_menu .tab_menu {
+        margin-right: 0;
+    }
+    .cont03_menu .tab_menu ul {
+        margin-bottom: 38px;
+    }
+    .cont03_menu .list {
+        gap: 20px;
+    }
+    .cont03_menu .list .item figure {
+        height: 180px;
+        width: 147.8px;
+    }
+    .cont03 .text p {
+        margin-top: 15px;
+        width: 100px;
+        height: 25px;
+        line-height: 30px;
+    }
+    .cont04 .title {
+        margin-top: 40px;
+    }
+    .cont04 .title p {
+        margin-bottom: 38px;
+    }
+    .cont04 .list .big_item figure {
+        height: 300px;
+    }
+    .cont04 .list .small_item figure {
+        height: 50px;
+    }
+    .cont05 {
+        margin-top: 40px;
+    }
+    .cont06 {
+        margin-top: 70px;
+    }
+    .cont06 .mobile_list {
+        display: none;
+    }
+    .cont06 .iphone12_item {
+        display: block;
+    }
+    .cont06 .iphone12_item figure {
+        height: 250px;
+    }
+    .cont06 .iphone12_item figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .cont06 .iphone12_item .item div {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        text-align: center;
+        background-color: #a0a0a09a;
+        font-family: 'GangwonEdu_OTFBoldA';
+    }
+    .cont06 .iphone12_item .item div h5 {
+        margin-bottom: 8px;
+    }
+    .swiper-pagination-bullets01 {
+        margin-top: 10px;
+        display: inline-block;
+        text-align: center;
+    }
+    #footer {
+        margin-top: 40px;
+    }
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        border: 1px solid #000000;
+        background-color: transparent;
     }
 }
+

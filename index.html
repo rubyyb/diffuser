@@ -70,6 +70,10 @@
             }//cont03
 
             //cont04
+            $('.cont04 .small_item .item a').click(function(e){
+                e.preventDefault();
+            });//링크방지
+
             let bigImage = document.querySelector('.cont04 .big_item img');
             let bigTitle = document.querySelector('.cont04 .big_item h5');
             let bigText = document.querySelector('.cont04 .big_item p');
@@ -93,18 +97,49 @@
                 })
             }//cont04
 
-            //cotn05
-            let cont05 = document.querySelector('.cont05');
-            let cont05Item = cont05.querySelectorAll('.inner .list .item');
-            let slideBar = cont05.querySelector('.slide_bar p');
+            //cotn06
+            $('.cont06 .small_item .item a').click(function(e){
+                e.preventDefault();
+            });//링크방지
 
-            for(let i = 0; i < slideBar.length; i++) {
-                slideBar[i].addEventListener('mouseenter', () => {
-                    alert();
-                })
-            }
+            let cont06BigImage = document.querySelector('.cont06 .mobile_list .big_item img');
+            let cont06BigTitle = document.querySelector('.cont06 .mobile_list .big_item h5');
+            let cont06BigText = document.querySelector('.cont06 .mobile_list .big_item p');
+
+            let cont06Small = document.querySelector('.cont06 .mobile_list .small_item');
+            let cont06Item = cont06Small.querySelectorAll('.swiper-slide');
+            let cont06Figure = cont06Small.querySelectorAll('figure');
+            let cont06Image = cont06Small.querySelectorAll('img');
+            let cont06Title = cont06Small.querySelectorAll('h5');
+            let cont06Text = cont06Small.querySelectorAll('p');
 
 
+            for(let i = 0; i < cont06Item.length; i++) {
+                cont06Item[i].addEventListener('click', () => {
+                    //alert();
+                    cont06BigImage.src = cont06Image[i].src;
+                    cont06BigTitle.innerHTML = cont06Title[i].innerHTML;
+                    cont06BigText.innerHTML = cont06Text[i].innerHTML;
+
+                    cont06Figure.forEach((cont06) => {
+                        cont06.style.opacity = '0.3';
+                    })
+                    cont06Figure[i].style.opacity ='1';
+                });
+
+            };//cont06
+
+
+            //footer
+            let footerMobile = $('.footer02 .mobile_title');
+            let footerList = $('.footer03 .list');
+
+            footerMobile.click(function(){
+                //alert();
+                if(footerList.css('display') === 'none') {
+                    footerList.toggleClass('on');
+                } 
+            })
 
         });//script end
     </script>
@@ -283,8 +318,8 @@
 
                             <button class="h_btn">
                                 <img src="img//이미지_저장아니콘.png" alt="더보기">
-                                <img src="img/이미지_장바구니아이콘.png" alt="더보기">
-                                <img src="img/이미지_더보기_검.png" alt="더보기">
+                                <img class="icon" src="img/이미지_장바구니아이콘.png" alt="더보기">
+                                <img class="icon" src="img/이미지_더보기_검.png" alt="더보기">
                             </button>
                         </a>
                     </div><!-- item end -->
@@ -306,8 +341,8 @@
 
                             <button class="h_btn">
                                 <img src="img//이미지_저장아니콘.png" alt="더보기">
-                                <img src="img/이미지_장바구니아이콘.png" alt="더보기">
-                                <img src="img/이미지_더보기_검.png" alt="더보기">
+                                <img class="icon" src="img/이미지_장바구니아이콘.png" alt="더보기">
+                                <img class="icon" src="img/이미지_더보기_검.png" alt="더보기">
                             </button>
                         </a>
                     </div><!-- item end -->
@@ -329,8 +364,8 @@
 
                             <button class="h_btn">
                                 <img src="img//이미지_저장아니콘.png" alt="더보기">
-                                <img src="img/이미지_장바구니아이콘.png" alt="더보기">
-                                <img src="img/이미지_더보기_검.png" alt="더보기">
+                                <img class="icon" src="img/이미지_장바구니아이콘.png" alt="더보기">
+                                <img class="icon" src="img/이미지_더보기_검.png" alt="더보기">
                             </button>
                         </a>
                     </div><!-- item end -->
@@ -352,8 +387,8 @@
 
                             <button class="h_btn">
                                 <img src="img//이미지_저장아니콘.png" alt="더보기">
-                                <img src="img/이미지_장바구니아이콘.png" alt="더보기">
-                                <img src="img/이미지_더보기_검.png" alt="더보기">
+                                <img class="icon" src="img/이미지_장바구니아이콘.png" alt="더보기">
+                                <img class="icon" src="img/이미지_더보기_검.png" alt="더보기">
                             </button>
                         </a>
                     </div><!-- item end -->
@@ -749,8 +784,8 @@
                                                 <img src="img/07_pick_3.jpg" alt="MD PICK">
                                             </figure>
                                             <div>
-                                                <h5>하트/별캔들</h5>
-                                                <p>6,000원</p>
+                                                <h5>튤립SET 캔들</h5>
+                                                <p>15,800원</p>
                                             </div>
                                         </a> 
                                     </div><!-- item end -->
@@ -840,8 +875,8 @@
                                                 <img src="img/07_pick_10.jpg" alt="MD PICK">
                                             </figure>
                                             <div>
-                                                <h5>크리스마스캔들모음</h5>
-                                                <p>9,800원</p>
+                                                <h5>우드 디퓨저 100ml</h5>
+                                                <p>25,800원</p>
                                             </div>
                                         </a> 
                                     </div><!-- item end -->
@@ -850,6 +885,296 @@
                             <div class="swiper-pagination"></div>
                         </div>
                     </div><!-- list end -->
+
+                    <div class="mobile_list">
+                        <div class="big_item">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/07_pick_1.jpg" alt="MD PICK">
+                                </figure>
+                                <div>
+                                    <h5>딸기캔들</h5>
+                                    <p>10,800원</p>
+                                </div>
+                            </a> 
+                        </div><!-- bog_itrm -->
+
+                        <div class="small_item">
+                            <div class="swiper mySwiper_small">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="img/07_pick_1.jpg" alt="MD PICK">
+                                                </figure>
+                                                <div>
+                                                    <h5>딸기캔들</h5>
+                                                    <p>10,800원</p>
+                                                </div>
+                                            </a> 
+                                        </div><!-- item end -->
+                                    </div><!-- swiper-slide end -->
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="img/07_pick_2.jpg" alt="MD PICK">
+                                                </figure>
+                                                <div>
+                                                    <h5>구름/블럭캔들</h5>
+                                                    <p>11,800원</p>
+                                                </div>
+                                            </a> 
+                                        </div><!-- item end -->
+                                    </div><!-- swiper-slide end -->
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="img/07_pick_3.jpg" alt="MD PICK">
+                                                </figure>
+                                                <div>
+                                                    <h5>튤립SET 캔들</h5>
+                                                    <p>15,800원</p>
+                                                </div>
+                                            </a> 
+                                        </div><!-- item end -->
+                                    </div><!-- swiper-slide end -->
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="img/07_pick_4.jpg" alt="MD PICK">
+                                                </figure>
+                                                <div>
+                                                    <h5>레몬/라임캔들</h5>
+                                                    <p>8,800원</p>
+                                                </div>
+                                            </a> 
+                                        </div><!-- item end -->
+                                    </div><!-- swiper-slide end -->
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="img/07_pick_5.jpg" alt="MD PICK">
+                                                </figure>
+                                                <div>
+                                                    <h5>(세트상품)진주알미니캔들</h5>
+                                                    <p>11,800원</p>
+                                                </div>
+                                            </a> 
+                                        </div><!-- item end -->
+                                    </div><!-- swiper-slide end -->
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="img/07_pick_6.jpg" alt="MD PICK">
+                                                </figure>
+                                                <div>
+                                                    <h5>디퓨저 리필액</h5>
+                                                    <p>12,800원</p>
+                                                </div>
+                                            </a> 
+                                        </div><!-- item end -->
+                                    </div><!-- swiper-slide end -->
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="img/07_pick_7.jpg" alt="MD PICK">
+                                                </figure>
+                                                <div>
+                                                    <h5>천연 레진스톤 방향제</h5>
+                                                    <p>27,800원</p>
+                                                </div>
+                                            </a> 
+                                        </div><!-- item end -->
+                                    </div><!-- swiper-slide end -->
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="img/07_pick_8.jpg" alt="MD PICK">
+                                                </figure>
+                                                <div>
+                                                    <h5>디퓨터 룸스프레이</h5>
+                                                    <p>44,800원</p>
+                                                </div>
+                                            </a> 
+                                        </div><!-- item end -->
+                                    </div><!-- swiper-slide end -->
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="img/07_pick_9.jpg" alt="MD PICK">
+                                                </figure>
+                                                <div>
+                                                    <h5>케이크캔들</h5>
+                                                    <p>17,800원</p>
+                                                </div>
+                                            </a> 
+                                        </div><!-- item end -->
+                                    </div><!-- swiper-slide end -->
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <a href="#">
+                                                <figure>
+                                                    <img src="img/07_pick_10.jpg" alt="MD PICK">
+                                                </figure>
+                                                <div>
+                                                    <h5>우드 디퓨저 100ml</h5>
+                                                    <p>25,800원</p>
+                                                </div>
+                                            </a> 
+                                        </div><!-- item end -->
+                                    </div><!-- swiper-slide end -->
+                                </div><!-- swiper-wrapper end -->
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div><!-- small_item -->
+                    </div><!-- mobile_list end -->
+
+                    <div class="iphone12_item">
+                        <div class="swiper mySwiper_iphone12">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_1.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>딸기캔들</h5>
+                                                <p>10,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_2.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>구름/블럭캔들</h5>
+                                                <p>11,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_3.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>튤립SET 캔들</h5>
+                                                <p>15,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_4.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>레몬/라임캔들</h5>
+                                                <p>8,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_5.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>(세트상품)진주알미니캔들</h5>
+                                                <p>11,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_6.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>디퓨저 리필액</h5>
+                                                <p>12,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_7.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>천연 레진스톤 방향제</h5>
+                                                <p>27,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_8.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>디퓨터 룸스프레이</h5>
+                                                <p>44,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_9.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>케이크캔들</h5>
+                                                <p>17,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/07_pick_10.jpg" alt="MD PICK">
+                                            </figure>
+                                            <div>
+                                                <h5>우드 디퓨저 100ml</h5>
+                                                <p>25,800원</p>
+                                            </div>
+                                        </a> 
+                                    </div><!-- item end -->
+                                </div><!-- swiper-slide end -->
+                            </div><!-- swiper-wrapper end -->
+                            <div class="swiper-pagination01 swiper-pagination-bullets01"></div>
+                        </div><!-- mySwiper_iphone12 -->
+                    </div><!-- small_item -->
                 </div><!-- inner end -->
             </section><!-- cont06 end -->
         </main><!-- #main end -->
@@ -870,7 +1195,14 @@
                         <p>부재시 문자 남겨주시면 확인 후 연락드리겠습니다.</p>
                     </div><!-- left end -->
 
-                    <div class="center">
+                    <div class="mobile_title">
+                        <p>기업정보</p>
+                        <button>
+                            <img src="img/24.02.20_수업_down화살표.png" alt="기업정보 더보기">
+                        </button>
+                    </div><!-- mobile_title end -->
+
+                    <div class="center mobile_footer">
                         <strong>계좌번호</strong>
                         <p>예금주 :김정식[비엔컨퍼니]</p>
                         <p>국민은행 774302-01-530028</p>
@@ -878,7 +1210,7 @@
                         <p>기업은행 190-116116-01-017</p>
                     </div><!-- center end -->
 
-                    <div class="right">
+                    <div class="right mobile_footer">
                         <strong>반품배송지</strong>
                         <p>광주광역시 북구 참판로 184 2층 F%NATURE</p>
                         <div class="right_box">
@@ -897,20 +1229,22 @@
                 </div><!-- footer02 end -->
 
                 <div class="footer03">
-                    <div>
-                        <p>법인명(상호):비엔컴퍼니</p>
-                        <p>대표자(성명):김정식</p>
-                        <p>사업자 등록번호 안내:397-21-00840</p>
-                    </div>
-                    <div>
-                        <p>통신판매어 신고:제 2018-광주북구-0873호[사업자정보확인]</p>
-                        <p>개인정보보호책임자:김정식(bncompany2018@naver.com)</p>
-                    </div>
-                    <div>
-                        <p>전화:010-8690-4049</p>
-                        <p>주소:61155 광주광역시 북구 참판로 184(두암동)2층 F5NATURE</p>
-                    </div>
-                    <p>Copyright © F5NATURE. All right re</p>
+                    <div class="list">
+                        <div>
+                            <p>법인명(상호):비엔컴퍼니</p>
+                            <p>대표자(성명):김정식</p>
+                            <p>사업자 등록번호 안내:397-21-00840</p>
+                        </div>
+                        <div>
+                            <p>통신판매어 신고:제 2018-광주북구-0873호[사업자정보확인]</p>
+                            <p>개인정보보호책임자:김정식(bncompany2018@naver.com)</p>
+                        </div>
+                        <div>
+                            <p>전화:010-8690-4049</p>
+                            <p>주소:61155 광주광역시 북구 참판로 184(두암동)2층 F5NATURE</p>
+                        </div>
+                    </div><!-- list end -->
+                    <p>Copyright © F5NATURE. All right reserved</p>
                 </div><!-- footer03 end -->
             </div><!-- inner end -->
         </footer><!-- footer end -->
@@ -928,10 +1262,24 @@
                 clickable: true,
             },
         });
-
         var swiper = new Swiper(".mySwiper_mobile", {
             pagination: {
                 el: ".swiper-pagination",
+            },
+        });
+        var swiper = new Swiper(".mySwiper_small", {
+            direction: "vertical",
+            slidesPerView: 4,
+            spaceBetween: 10,
+            mousewheel: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+        var swiper = new Swiper(".mySwiper_iphone12", {
+            pagination: {
+                el: ".swiper-pagination01",
             },
         });
       </script>
