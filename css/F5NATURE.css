@@ -389,7 +389,7 @@ h3 {
 }
 .cont04 .title p {
     position: absolute;
-    bottom: 50%;
+    bottom: 35px;
     right: 50px;
     transform: translateY(-50%);
     font-family: 'InkLipquid';
