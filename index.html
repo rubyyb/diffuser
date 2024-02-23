@@ -38,6 +38,10 @@
             })//2차메뉴
 
             //cont02
+            $('.cont02 .list .item a').click(function(e){
+                e.preventDefault();
+            });//링크방지
+
             let cont02 = $('.cont02 .item');
             let openBtn = $('.cont02 .item_img .open_btn');
             let hoverBtn = $('.cont02 .item_img .h_btn');
@@ -49,6 +53,10 @@
 
 
             //cont03
+            $('.cont03 .tab .list .item a').click(function(e){
+                e.preventDefault();
+            });//링크방지
+
             let cont03 = document.querySelector('.cont03_menu .tab');
             let menu = cont03.querySelectorAll('.tab_menu li');
             let list = cont03.querySelectorAll('.cont03_menu .tab .list');
@@ -98,7 +106,15 @@
             }//cont04
 
             //cotn06
+            $('.cont06 .list .item a').click(function(e){
+                e.preventDefault();
+            });//링크방지
+
             $('.cont06 .small_item .item a').click(function(e){
+                e.preventDefault();
+            });//링크방지
+
+            $('.cont06 .iphone12_item .item a').click(function(e){
                 e.preventDefault();
             });//링크방지
 
